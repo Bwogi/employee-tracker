@@ -8,6 +8,13 @@
 
   ## Description
  This is a command line application to be used to manage employees in a company using Node.js, inquirer and MySQL.
+
+  ## Packages used
+  node, inquirer, console.table, mysql2, figlet
+
+  ## Starting point - database schema
+   ![Screenshot](./database_schema.png)
+
   ## Installation
   ```$ npm i mysql2 inquirer console.table figlet```
 
@@ -23,7 +30,7 @@
   ## Screenshot
    ![Screenshot](./employee-tracker-demo-screenshot.png)
   ## Demo
-  [Employee Tracker app demo on youtube](https://youtu.be/MiY-PcK8FZI)
+  Find the [demo here on youtube.](https://youtu.be/MiY-PcK8FZI)
   ## Project repository 
   https://github.com/bwogi/employee-tracker
   ## Contributors
