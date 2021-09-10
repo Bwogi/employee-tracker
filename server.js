@@ -18,11 +18,11 @@ db.connect(err=> {
 }
 });     
 
-console.log(chalk.yellow.bold(`===================================================`));
+console.log(chalk.blue.bold(`===================================================`));
 console.log(``);
-console.log(chalk.greenBright.bold(figlet.textSync('Employee-Tracker')));
+console.log(chalk.blue.bold(figlet.textSync('Employee-Tracker')));
 console.log(``);
-console.log(chalk.yellow.bold(`=================================================`));
+console.log(chalk.blue.bold(`=================================================`));
 
 // THE FUNCTIONS
 // user prompts
@@ -34,43 +34,43 @@ function promptUserInput (){
           type: 'list',
           message: 'Please select an option:',
           choices: [
-            'View All Employees',
-            'View All Employees By Department',
-            'View All Employees By Role',
-            'View All Employees By Manager',
-            'Add Employee',
+            'View Employees',
+            'View Employees By Department',
+            'View Employees By Role',
+            'View Employees By Manager',
+            'Add an Employee',
             'Remove Employee',
             'Update Employee Role',
             'Update Employee Manager',
-            'View All Roles',
-            'Add Role',
-            'Remove Role',
-            'View All Departments',
-            'Total Utilized Budget of a Department',
-            'Add Department',
-            'Remove Department',
+            'View Roles',
+            'Add a Role',
+            'Remove a Role',
+            'View Departments',
+            'Total Departmental Budget',
+            'Add a Department',
+            'Remove a Department',
             'Exit'
             ]
         }
     ])
   .then(({ userchoice }) =>{
         switch(userchoice){
-            case "View All Employees":
-                console.log("View all Employees");
+            case "View Employees":
+                console.log("View Employees");
                 viewAllEmp();
                 break;
-            case "View All Employees By Department":
+            case "View Employees By Department":
                 viewAllEmpByDept();
                 break;
 
-            case "View All Employees By Role":
+            case "View Employees By Role":
                 viewAllEmpByRole();
                 break;
 
-            case "View All Employees By Manager":
+            case "View Employees By Manager":
                 viewEmpByMgr();
                 break;
-            case "Add Employee":
+            case "Add an Employee":
                 addEmp();
                 break;
             case "Remove Employee":
@@ -82,22 +82,22 @@ function promptUserInput (){
             case "Update Employee Manager":
                 updateEmpMgr();
                 break;
-            case "View All Roles":
+            case "View Roles":
                 viewAllRoles();
                 break;
-            case "Add Role":
+            case "Add a Role":
                 addRole();
                 break;
-            case "Remove Role":
+            case "Remove a Role":
                 removeRole();
                 break;
-            case "View All Departments":
+            case "View Departments":
                 viewAllDepts();
                 break;
-            case "Add Department":
+            case "Add a Department":
                 addDept();
                 break;
-            case "Remove Department":
+            case "Remove a Department":
                 removeDept();
                 break;
             case "Total Department Budget used":
@@ -127,11 +127,11 @@ function viewAllEmp(){
         return;
         }
         console.log(``);
-        console.log(chalk.yellow.bold(`============================`));
-        console.log(`         ` + chalk.green.bold(` Employees Table`));
-        console.log(chalk.yellow.bold(`============================`));
+        console.log(chalk.blue.bold(`============================`));
+        console.log(`         ` + chalk.green.bold(` Employees `));
+        console.log(chalk.blue.bold(`============================`));
         console.table(response);
-        console.log(chalk.yellow.bold(`===========================`));
+        console.log(chalk.blue.bold(`===========================`));
      });
      promptUserInput();
 };
@@ -148,11 +148,11 @@ function viewAllRoles(){
         return;
         }
         console.log(``);
-        console.log(chalk.yellow.bold(`=============================================`));
+        console.log(chalk.blue.bold(`=============================================`));
         console.log(`          ` + chalk.green.bold(` The Roles`));
-        console.log(chalk.yellow.bold(`=============================================`));
+        console.log(chalk.blue.bold(`=============================================`));
         console.table(response);
-        console.log(chalk.yellow.bold(`============================================`));
+        console.log(chalk.blue.bold(`============================================`));
      });
      promptUserInput();
 };
@@ -164,11 +164,11 @@ function viewAllDepts(){
     db.promise().query(sql)
     .then(response =>{
         console.log(``);
-        console.log(chalk.yellow.bold(`=============================================`));
+        console.log(chalk.blue.bold(`=============================================`));
         console.log(`             ` + chalk.green.bold(` The Departments `));
-        console.log(chalk.yellow.bold(`=============================================`));
+        console.log(chalk.blue.bold(`=============================================`));
         console.table(response[0]);
-        console.log(chalk.yellow.bold(`=============================================`));
+        console.log(chalk.blue.bold(`=============================================`));
     })
     .catch(e =>{
         console.log(e);
@@ -188,11 +188,11 @@ function viewAllEmpByRole(){
         return;
         }
         console.log(``);
-        console.log(chalk.yellow.bold(`==============================================`));
-        console.log(`         ` + chalk.green.bold(` Employees by Role`));
-        console.log(chalk.yellow.bold(`==============================================`));
+        console.log(chalk.blue.bold(`==============================================`));
+        console.log(`         ` + chalk.green.bold(` Employees - Role`));
+        console.log(chalk.blue.bold(`==============================================`));
         console.table(response);
-        console.log(chalk.yellow.bold(`==============================================`));
+        console.log(chalk.blue.bold(`==============================================`));
     });
     promptUserInput();
 
@@ -211,11 +211,11 @@ function viewAllEmpByDept(){
         return;
         }
         console.log(``);
-        console.log(chalk.yellow.bold(`================================================`));
-        console.log(`       ` + chalk.green.bold(` Employees by Department`));
-        console.log(chalk.yellow.bold(`=================================================`));
+        console.log(chalk.blue.bold(`================================================`));
+        console.log(`       ` + chalk.blue.bold(` Employees - Department`));
+        console.log(chalk.blue.bold(`=================================================`));
         console.table((response));
-        console.log(chalk.yellow.bold(`=================================================`));
+        console.log(chalk.blue.bold(`=================================================`));
     });
     promptUserInput();
 }
@@ -234,11 +234,11 @@ function viewDeptBudget(){
         return;
         }
         console.log(``);
-        console.log(chalk.yellow.bold(`================================================`));
-        console.log(`           ` + chalk.green.bold(` Departmental Budget`));
-        console.log(chalk.yellow.bold(`=================================================`));
+        console.log(chalk.blue.bold(`================================================`));
+        console.log(`           ` + chalk.blue.bold(` Departmental Budget`));
+        console.log(chalk.blue.bold(`=================================================`));
         console.table((response));
-        console.log(chalk.yellow.bold(`=================================================`));
+        console.log(chalk.blue.bold(`=================================================`));
     
         });
     promptUserInput();
@@ -257,11 +257,11 @@ function viewEmpByMgr(){
         if (err) throw err;
 
     console.log(``);
-    console.log(chalk.yellow.bold(`=======================================`));
-    console.log(`      ` + chalk.green.bold(`Employees and their managers`));
-    console.log(chalk.yellow.bold(`====================================+====`));
+    console.log(chalk.blue.bold(`=======================================`));
+    console.log(`      ` + chalk.blue.bold(`Employees and their managers`));
+    console.log(chalk.blue.bold(`====================================+====`));
     console.table((response));
-    console.log(chalk.yellow.bold(`=========================================`));
+    console.log(chalk.blue.bold(`=========================================`));
 });
 promptUserInput();
 }
@@ -303,7 +303,7 @@ function removeRole(){
                   console.log(err);
                 }
                 console.log(chalk.redBright.bold(`=========================================================`));
-                console.log(chalk.greenBright(`Role Successfully Removed`));
+                console.log(chalk.green(`Role Successfully Removed`));
                 console.log(chalk.redBright.bold(`=========================================================`));
                 //display roles
                 viewAllRoles();  
@@ -363,7 +363,7 @@ function deleteDeptRecord(deptName){
           console.log(err);
         }
         console.log(chalk.redBright.bold(`========================================`));
-        console.log(chalk.greenBright(`Department record Successfully Removed`));
+        console.log(chalk.green(`Department record Successfully Removed`));
         console.log(chalk.redBright.bold(`==========================================`));
         viewAllDepts();
       });
@@ -416,7 +416,7 @@ function chooseEmployee(operation){
           console.log(err);
         }
         console.log(chalk.redBright.bold(`====================================================================================`));
-        console.log(chalk.greenBright(`Employee Successfully Removed`));
+        console.log(chalk.blue(`Employee Successfully Removed`));
         console.log(chalk.redBright.bold(`====================================================================================`));
         viewAllEmp();
       });
@@ -521,9 +521,9 @@ function  updateEmpMgr()  {
               [managerId, employeeId],
               (error) => {
                 if (error) throw error;
-                console.log(chalk.greenBright.bold(`====================================================================================`));
-                console.log(chalk.greenBright(`Employee Manager Updated`));
-                console.log(chalk.greenBright.bold(`====================================================================================`));
+                console.log(chalk.blue.bold(`====================================================================================`));
+                console.log(chalk.blue(`Employee Manager Updated`));
+                console.log(chalk.blue.bold(`====================================================================================`));
                 viewAllEmp();
               
               }
@@ -565,7 +565,7 @@ function addDept()
           }
         
           console.log(chalk.redBright.bold(`====================================================================================`));
-          console.log(chalk.greenBright(`Department record Successfully Added`));
+          console.log(chalk.blue(`Department record Successfully Added`));
           console.log(chalk.redBright.bold(`====================================================================================`));
           viewAllDepts(); //view departmen tables
     });
